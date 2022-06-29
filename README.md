@@ -8,5 +8,5 @@
   
 
 <p align="center">
-  <img width="1000" height="500" src="https://github.com/0EnIgma1/Sketcher/blob/main/Capture.PNG">
+  <img width="800" height="400" src="https://github.com/0EnIgma1/Sketcher/blob/main/Capture.PNG">
 </p>
