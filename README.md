@@ -5,7 +5,7 @@
 - Developed in python using :-
 
   >- openCV
-  >- Gaussian blur
+  >- Gaussian Blur
   
   
 # Sample Output
