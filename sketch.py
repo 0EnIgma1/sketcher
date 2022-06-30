@@ -2,9 +2,13 @@
 import cv2
 import matplotlib.pyplot as plt
 import pyautogui as pg
+from tkinter import filedialog
+from tkinter import *
 
-#reading image
-user_path = input("Enter the image path :")
+#read image directly from pc
+root = Tk()
+root.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+user_path = root.filename
 img = cv2.imread(user_path)
 
 #converting rgb image to grayscale
