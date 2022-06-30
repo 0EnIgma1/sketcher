@@ -7,7 +7,7 @@ from tkinter import *
 
 #read image directly from pc
 root = Tk()
-root.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+root.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("images",".jpg .png .jpeg"),("all files","*.*")))
 user_path = root.filename
 img = cv2.imread(user_path)
 
