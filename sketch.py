@@ -15,8 +15,7 @@ win.title("sketcher")
 win.geometry("1100x550")
 style = ttk.Style()
 style.theme_use('clam')
-#Label(win, text= "Hello", font=('Mistral 18 bold')).place(x=350,y=80)
-Label(win, text= "This is a simple project created by us to convert a normal image into a sketch..hope yall liked it", font=('Mistral 18 bold')).place(x=150,y=80)
+Label(win, text= "A project created by us to convert a normal image into a sketch..hope y'all liked it", font=('calibri 18 bold')).place(x=140,y=80)
 
 #get image file from computer
 def click_fun():
@@ -28,6 +27,7 @@ def click_fun():
    #converting rgb image to grayscale
    grey = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
    invert_img = cv2.bitwise_not(grey)
+
 
   #appliying gaussian blur 
    blur_img = cv2.GaussianBlur(invert_img,(111,111),0)
@@ -56,8 +56,9 @@ def click_fun():
    if res == "OK":
        cv2.imwrite('sketch.png',sketch)
        print("Image downloaded successfully !")
+
 # Create a Label widget
-label = Label(win, text="", font=('Aerial', 14))
+label = Label(win, text="Sketcher", font=('mistral', 22),fg = "red")
 label.pack(pady=40)
 
 # Create a Tkinter button
@@ -68,13 +69,13 @@ def callback(url):
 
 #Create a Label to display the link
 #link to Naveen's github account
-link = Label(win, text="Naveen",font=('Helveticabold', 15), fg="blue", cursor="hand2")
+link = Label(win, text="Naveen",font=('mistral', 20), fg="blue", cursor="hand2")
 link.pack()
 link.bind("<Button-1>", lambda e:
 callback("https://github.com/0EnIgma1"))
 
 #link to Arjun's github account
-link = Label(win, text="Arjun",font=('Helveticabold', 15), fg="blue", cursor="hand2")
+link = Label(win, text="Arjun",font=('mistral', 20), fg="blue", cursor="hand2")
 link.pack()
 link.bind("<Button-1>", lambda e:
 callback("https://github.com/arjunprakash027"))
