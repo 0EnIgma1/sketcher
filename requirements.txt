@@ -1,7 +1,5 @@
-opencv-python
-matplotlib
+cv2
+matplotlib.pyplot
 pyautogui
 streamlit
 numpy
-PIL
-io
