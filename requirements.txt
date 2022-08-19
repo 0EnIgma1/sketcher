@@ -1,5 +1,3 @@
 matplotlib
-PyAutoGUI
 streamlit
 numpy
-opencv-python
