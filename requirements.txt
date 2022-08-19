@@ -1,3 +1,4 @@
 matplotlib
 streamlit
 numpy
+opencv-python-headless
