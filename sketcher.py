@@ -65,7 +65,7 @@ if uploadFile is not None:
     st.text("")
 
     st.success('Successfully Sketched the Image', icon = "✅")
-    st.text("You can download the Image by clicking OK in the Confirm box")
+    #st.text("You can download the Image by clicking OK in the Confirm box")
     st.text("")
     st.text("")
     feedback = st.slider('Rate this Project', 0,5,1)
@@ -80,7 +80,7 @@ if uploadFile is not None:
     
     for i in range(0,5):
         st.text("")
-    st.write("[GitHub](https://github.com/0EnIgma1)[LinkedIn](https://www.linkedin.com/in/naveen-kumar-s-921990210/)")
+    st.write("[GitHub](https://github.com/0EnIgma1) <> [LinkedIn](https://www.linkedin.com/in/naveen-kumar-s-921990210/)")
 
     #res = pg.confirm('Do you want to download the sketch ?')
     #if res == "OK":
