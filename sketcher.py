@@ -56,8 +56,6 @@ if uploadFile is not None:
     sketch = cv2.divide(grey,inblur_img,scale = 255.0)
     final_img = cv2.cvtColor(sketch,cv2.COLOR_BGR2RGB)
 
-    st.snow()
-
     st.subheader("Sketched Image")
     st.image(final_img)
     
