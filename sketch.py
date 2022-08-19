@@ -7,6 +7,8 @@ from tkinter import filedialog
 from tkinter import *
 from tkinter import ttk
 import webbrowser
+import streamlit as st
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 win = Tk()
 
@@ -48,7 +50,8 @@ def click_fun():
        rgb_sketch = cv2.cvtColor(sketch,cv2.COLOR_BGR2RGB)
        plt.imshow(rgb_sketch)
        plt.axis('off')
-       plt.show()
+       ax = plt.show()
+       st.pyplot(ax)
        break
 
    #message box
