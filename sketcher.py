@@ -5,7 +5,9 @@ import pyautogui as pg
 from PIL import Image
 import numpy as np
 from io import StringIO
+import os
 
+os.environ['DISPLAY'] = ':0'
 icon = Image.open("UV_icon1.png")
 st.set_page_config(
     page_title = "Sketcher",
