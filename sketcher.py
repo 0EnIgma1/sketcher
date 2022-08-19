@@ -15,7 +15,7 @@ st.set_page_config(
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-st.title("Sketchers")
+st.title("Sketcher")
 st.header("A program to convert any Image to a Pencil Sketch using Python")
 st.markdown("**_A project under UV_**")
 
