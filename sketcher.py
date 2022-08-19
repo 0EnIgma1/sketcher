@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 import cv2
-import pyautogui as pg
+#import pyautogui as pg
 from PIL import Image
 import numpy as np
 from io import StringIO
-import os
+#import os
 
-os.environ['DISPLAY'] = ':0'
+#os.environ['DISPLAY'] = ':0'
 icon = Image.open("UV_icon1.png")
 st.set_page_config(
     page_title = "Sketcher",
@@ -82,12 +82,12 @@ if uploadFile is not None:
     
     for i in range(0,5):
         st.text("")
-    st.write("[GitHub](https://github.com/0EnIgma1)             [LinkedIn](https://www.linkedin.com/in/naveen-kumar-s-921990210/)")
+    st.write("[GitHub](https://github.com/0EnIgma1)[LinkedIn](https://www.linkedin.com/in/naveen-kumar-s-921990210/)")
 
-    res = pg.confirm('Do you want to download the sketch ?')
-    if res == "OK":
-       cv2.imwrite('sketch.png',sketch)
-       print("Image downloaded successfully !")
+    #res = pg.confirm('Do you want to download the sketch ?')
+    #if res == "OK":
+       #cv2.imwrite('sketch.png',sketch)
+       #print("Image downloaded successfully !")
 
     
         
