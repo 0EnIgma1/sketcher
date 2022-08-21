@@ -14,4 +14,5 @@
   <img width="500" height="250" src="https://github.com/0EnIgma1/Sketcher/blob/main/Capture.PNG">
 </p>
 
-## You can try this in Webapp using the LINK [Sketcher]("https://0enigma1-sketcher-sketcher-2j6moy.streamlitapp.com/")
+## You can try this in Webapp developed using Streamlit
+Click -> [Sketcher]("https://0enigma1-sketcher-sketcher-2j6moy.streamlitapp.com/")
