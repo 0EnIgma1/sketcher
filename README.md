@@ -15,4 +15,5 @@
 </p>
 
 ## You can try this in Webapp developed using Streamlit
-Click -> [Sketcher]("https://0enigma1-sketcher-sketcher-2j6moy.streamlitapp.com/")
+
+Click [Sketcher]("https://0enigma1-sketcher-sketcher-2j6moy.streamlitapp.com/")
