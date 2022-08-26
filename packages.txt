@@ -1,2 +1,0 @@
-streamlit-image-comparison
-opencv-python-headless
