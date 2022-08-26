@@ -3,3 +3,4 @@ streamlit
 numpy
 opencv-python-headless==4.5.5.62
 streamlit-image-comparison
+libgl1-mesa-glx
