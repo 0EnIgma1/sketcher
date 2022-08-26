@@ -5,7 +5,7 @@ import cv2
 from PIL import Image
 import numpy as np
 from io import StringIO
-#from streamlit_image_comparison import image_comparison
+from streamlit_image_comparison import image_comparison
 #import os
 
 #os.environ['DISPLAY'] = ':0'
@@ -35,6 +35,11 @@ def fun():
         plt.axis('off')
         ax = plt.show()
         st.pyplot(ax)
+
+        image_comparison(
+        img1=image1,
+        img2=final_img,)
+
         break
 
 # Uploading the File to the Page
