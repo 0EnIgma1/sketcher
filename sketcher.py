@@ -5,7 +5,7 @@ import cv2
 from PIL import Image
 import numpy as np
 from io import StringIO
-from streamlit_image_comparison import image_comparison
+#from streamlit_image_comparison import image_comparison
 #import os
 
 #os.environ['DISPLAY'] = ':0'
@@ -61,9 +61,9 @@ if uploadFile is not None:
 
 
 # render image-comparison
-    image_comparison(
-    img1=image1,
-    img2=final_img,
+    #image_comparison(
+    #img1=image1,
+    #img2=final_img,
         )
     
     st.subheader("Comparison")
