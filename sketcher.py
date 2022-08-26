@@ -5,6 +5,7 @@ import cv2
 from PIL import Image
 import numpy as np
 from io import StringIO
+from streamlit_image_comparison import image_comparison
 #import os
 
 #os.environ['DISPLAY'] = ':0'
@@ -12,6 +13,7 @@ icon = Image.open("UV_icon1.png")
 st.set_page_config(
     page_title = "Sketcher",
     page_icon = icon,
+    layout = "centered"
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -56,8 +58,13 @@ if uploadFile is not None:
     sketch = cv2.divide(grey,inblur_img,scale = 255.0)
     final_img = cv2.cvtColor(sketch,cv2.COLOR_BGR2RGB)
 
-    st.subheader("Sketched Image")
-    st.image(final_img)
+
+
+# render image-comparison
+    image_comparison(
+    img1=image1,
+    img2=final_img,
+        )
     
     st.subheader("Comparison")
     fun()
