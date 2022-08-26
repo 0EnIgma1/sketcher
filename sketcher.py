@@ -63,8 +63,7 @@ if uploadFile is not None:
 # render image-comparison
     #image_comparison(
     #img1=image1,
-    #img2=final_img,
-        )
+    #img2=final_img,)
     
     st.subheader("Comparison")
     fun()
