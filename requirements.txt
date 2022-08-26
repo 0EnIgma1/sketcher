@@ -1,3 +1,5 @@
 matplotlib
 streamlit
 numpy
+streamlit-image-comparison
+opencv-python-headless
