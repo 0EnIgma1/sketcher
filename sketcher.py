@@ -36,16 +36,7 @@ def fun():
         ax = plt.show()
         st.pyplot(ax)
 
-        static_component = image_comparison(
-    img1=image1,
-    img2=final_img,
-    label1="orginal image",
-    label2="sketched image",
-    starting_position=28,
-    show_labels=True,
-    make_responsive=True,
-    in_memory=True,
-    )
+        
 
         break
 
@@ -79,6 +70,7 @@ if uploadFile is not None:
     
     st.subheader("Comparison")
     fun()
+
 
     st.text("")
 
