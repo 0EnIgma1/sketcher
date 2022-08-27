@@ -60,7 +60,8 @@ if uploadFile is not None:
 
     st.subheader("Sketched Image")
     st.image(final_img)
-    render image-comparison
+    
+    #render image-comparison
     image_comparison(
     img1=image1,
     img2=final_img,)
