@@ -102,8 +102,6 @@ if uploadFile is not None:
         out_img = gray(image1)
     elif option == 'Pencil sketch':
         out_img = sketch(image1)
-    elif option == 'Oil Painting':
-        out_img = oil_paint(image1)
     elif option == 'Watercolor':
         out_img = watercol(image1)
     elif option == 'Negative':
