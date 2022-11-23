@@ -115,7 +115,8 @@ if uploadFile is not None:
         threshold1, threshold2 = values
         out_img = canny_edge(image1, threshold1, threshold2)
  
-
+    st.image(out_img)
+    
     st.subheader("Comparison")
     fun(image1,out_img)
 
