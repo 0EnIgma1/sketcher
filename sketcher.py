@@ -26,6 +26,7 @@ def fun(image1,image2):
         plt.axis('off')
         plt.subplot(1,2,2)
         plt.title("sketch",size=18)
+        image2 = cv2.cvtColor(image2,cv2.COLOR_BGR2RGB)
         plt.imshow(image2)
         plt.axis('off')
         ax = plt.show()
@@ -116,7 +117,7 @@ if uploadFile is not None:
         out_img = canny_edge(image1, threshold1, threshold2)
  
     st.image(out_img)
-    
+
     st.subheader("Comparison")
     fun(image1,out_img)
 
