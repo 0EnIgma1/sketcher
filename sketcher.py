@@ -14,7 +14,7 @@ st.set_page_config(
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.title("Sketcher")
-st.header("A program to convert any Image to a Pencil Sketch using Python")
+st.header("A program to convert any Image to various Sketchs and filters using Python")
 st.markdown("**_A project under UV_**")
 
 def fun(image1,image2):
@@ -37,9 +37,9 @@ def gray(image):
     gray_img = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     return gray_img
 
-def oil_paint(image):
-    oil_img = cv2.xphoto.oilPainting(image,7,1)
-    return oil_img
+#def oil_paint(image):
+    #oil_img = cv2.xphoto.oilPainting(image,7,1)
+    #return oil_img
 
 def watercol(image):
     water_img = cv2.stylization(image,sigma_s = 60, sigma_r = 0.3)#0.2 or 0.3
@@ -89,7 +89,7 @@ def cartoon(image):
 # Uploading the File to the Page
 uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
 
-option = st.selectbox('Sketch the image into :',('Pencil sketch','Gray','Oil Painting','Watercolor','Negative','Canny Edge','Cartoon'))
+option = st.selectbox('Sketch the image into :',('Pencil sketch','Gray','Watercolor','Negative','Canny Edge','Cartoon'))
 # Checking the Format of the page
 if uploadFile is not None:
     im = Image.open(uploadFile)
