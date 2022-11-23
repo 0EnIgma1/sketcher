@@ -114,16 +114,8 @@ if uploadFile is not None:
         st.text(values)
         threshold1, threshold2 = values
         out_img = canny_edge(image1, threshold1, threshold2)
+ 
 
-    #appliying gaussian blur 
-    blur_img = cv2.GaussianBlur(invert_img,(111,111),0)
-    inblur_img = cv2.bitwise_not(blur_img)
-    sketch = cv2.divide(grey,inblur_img,scale = 255.0)
-    final_img = cv2.cvtColor(sketch,cv2.COLOR_BGR2RGB)
-
-    st.subheader("Sketched Image")
-    st.image(final_img)
-    
     st.subheader("Comparison")
     fun(image1,out_img)
 
@@ -147,6 +139,10 @@ if uploadFile is not None:
         st.text("")
     st.write("[GitHub](https://github.com/0EnIgma1) <> [LinkedIn](https://www.linkedin.com/in/naveen-kumar-s-921990210/)")
 
+    #res = pg.confirm('Do you want to download the sketch ?')
+    #if res == "OK":
+       #cv2.imwrite('sketch.png',sketch)
+       #print("Image downloaded successfully !")
 
     
         
