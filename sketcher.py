@@ -4,8 +4,6 @@ import cv2
 from PIL import Image
 import numpy as np
 from io import StringIO
-from streamlit_image_comparison import image_comparison
-#import os
 
 icon = Image.open("UV_icon1.png")
 st.set_page_config(
