@@ -121,8 +121,8 @@ if uploadFile is not None:
  
     st.image(out_img)
 
-    st.subheader("Comparison")
-    fun(image1,out_img)
+    #st.subheader("Comparison")
+    #fun(image1,out_img)
 
     st.text("")
 
