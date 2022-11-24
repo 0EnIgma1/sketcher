@@ -4,6 +4,7 @@ import cv2
 from PIL import Image
 import numpy as np
 from io import StringIO
+import webbrowser
 
 icon = Image.open("UV_icon1.png")
 st.set_page_config(
@@ -13,8 +14,16 @@ st.set_page_config(
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-st.title("Sketcher")
+st.title("SKETCHER")
 st.header("A program to convert any Image to various Sketchs and filters using Python")
+st.subheader("AVAILABLE FILTERS")
+st.markdown("- Pencil Sketch")
+st.markdown("- Grayscale")
+st.markdown("- Watercolor")
+st.markdown("- Negative")
+st.markdown("- Canny edge dynamic detection")
+st.markdown("- Cartoon")
+
 st.markdown("**_A project under UV_**")
 
 def fun(image1,image2):
@@ -36,10 +45,6 @@ def fun(image1,image2):
 def gray(image):
     gray_img = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     return gray_img
-
-#def oil_paint(image):
-    #oil_img = cv2.xphoto.oilPainting(image,7,1)
-    #return oil_img
 
 def watercol(image):
     water_img = cv2.stylization(image,sigma_s = 60, sigma_r = 0.3)#0.2 or 0.3
@@ -121,8 +126,8 @@ if uploadFile is not None:
 
     st.text("")
 
-    st.success('Successfully Sketched the Image', icon = "✅")
-    #st.text("You can download the Image by clicking OK in the Confirm box")
+    st.success('Successfully converted the Image', icon = "✅")
+
     st.text("")
     st.text("")
     feedback = st.slider('Rate this Project', 0,5,1)
@@ -137,8 +142,14 @@ if uploadFile is not None:
     
     for i in range(0,5):
         st.text("")
-    st.write("[GitHub](https://github.com/0EnIgma1) <> [LinkedIn](https://www.linkedin.com/in/naveen-kumar-s-921990210/)")
 
+    linkedin = st.button('LinkedIn')
+    github = st.button('GitHub')
+    if linkedin:
+        webbrowser.open("https://www.linkedin.com/in/naveen-kumar-s-921990210/")
+    if github:
+        webbrowser.open("https://github.com/0EnIgma1")
+    
     #res = pg.confirm('Do you want to download the sketch ?')
     #if res == "OK":
        #cv2.imwrite('sketch.png',sketch)
