@@ -19,7 +19,7 @@
 # Sample Output
 
 <p align="center">
-  <img width="500" height="250" src="https://github.com/0EnIgma1/Sketcher/blob/main/collage.PNG">
+  <img width="500" height="500" src="https://github.com/0EnIgma1/sketcher/blob/master/collage.png">
 </p>
 
 ## You can try this in Webapp developed using Streamlit
