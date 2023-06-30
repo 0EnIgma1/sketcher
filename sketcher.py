@@ -24,8 +24,6 @@ st.markdown("- Negative")
 st.markdown("- Canny edge dynamic detection")
 st.markdown("- Cartoon")
 
-st.markdown("**_A project under UV_**")
-
 def fun(image1,image2):
     while True:
         plt.figure(figsize=(14,8))
@@ -92,63 +90,73 @@ def cartoon(image):
     return result
 
 # Uploading the File to the Page
-uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
+def upload():
+    uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
+    if uploadFile is not None:
+        im = Image.open(uploadFile)
+        image1 = np.array(im)
+        st.subheader("Original Image")
+        st.image(image1)
+        st.subheader("Converted Image")
+    return image1
 
-option = st.selectbox('Sketch the image into :',('Pencil sketch','Gray','Watercolor','Negative','Canny Edge','Cartoon'))
+option = st.selectbox('Sketch the image into :',('Pencil sketch','Gray','Watercolor','Negative','Canny Edge','Cartoon', 'Custom Stylizer'))
 # Checking the Format of the page
-if uploadFile is not None:
-    im = Image.open(uploadFile)
-    image1 = np.array(im)
-    st.subheader("Original Image")
-    st.image(image1)
-    st.subheader("Converted Image")
 
-    if option == 'Gray':
-        out_img = gray(image1)
-    elif option == 'Pencil sketch':
-        out_img = sketch(image1)
-    elif option == 'Watercolor':
-        out_img = watercol(image1)
-    elif option == 'Negative':
-        out_img = negative(image1) 
-    elif option == 'Cartoon':
-        out_img = cartoon(image1)   
-    elif option == 'Canny Edge':
-        values = st.slider("Select the Range of Thresholds",0,255,(25,75))
-        st.text(values)
-        threshold1, threshold2 = values
-        out_img = canny_edge(image1, threshold1, threshold2)
- 
-    st.image(out_img)
+if option == 'Gray':
+    image1 = upload()
+    out_img = gray(image1)
+elif option == 'Pencil sketch':
+    image1 = upload()
+    out_img = sketch(image1)
+elif option == 'Watercolor':
+    image1 = upload()
+    out_img = watercol(image1)
+elif option == 'Negative':
+    image1 = upload()
+    out_img = negative(image1) 
+elif option == 'Cartoon':
+    image1 = upload()
+    out_img = cartoon(image1)   
+elif option == 'Canny Edge':
+    image1 = upload()
+    values = st.slider("Select the Range of Thresholds",0,255,(25,75))
+    st.text(values)
+    threshold1, threshold2 = values
+    out_img = canny_edge(image1, threshold1, threshold2)
+elif option == 'Custom Stylizer':
+        ...
+
+st.image(out_img)
 
     #st.subheader("Comparison")
     #fun(image1,out_img)
 
+st.text("")
+
+st.success('Successfully converted the Image', icon = "✅")
+
+st.text("")
+st.text("")
+feedback = st.slider('Rate this Project', 0,5,1)
+st.write(f"I'm giving {feedback} star for this project !")
+
+st.text("Thank you for visiting this project..Hope it will be useful for you")
+
+for j in range(0,4):
+    st.text("")
+st.subheader("Wanna join / become MEMBER of our society UV...")
+st.write("Follow the LINK [UV](https://theuvofearth.wixsite.com/stage1)")
+
+for i in range(0,5):
     st.text("")
 
-    st.success('Successfully converted the Image', icon = "✅")
-
-    st.text("")
-    st.text("")
-    feedback = st.slider('Rate this Project', 0,5,1)
-    st.write(f"I'm giving {feedback} star for this project !")
-
-    st.text("Thank you for visiting this project..Hope it will be useful for you")
-
-    for j in range(0,4):
-        st.text("")
-    st.subheader("Wanna join / become MEMBER of our society UV...")
-    st.write("Follow the LINK [UV](https://theuvofearth.wixsite.com/stage1)")
-    
-    for i in range(0,5):
-        st.text("")
-
-    linkedin = st.button('LinkedIn')
-    github = st.button('GitHub')
-    if linkedin:
-        webbrowser.open("https://www.linkedin.com/in/naveen-kumar-s-921990210/")
-    if github:
-        webbrowser.open("https://github.com/0EnIgma1")
+linkedin = st.button('LinkedIn')
+github = st.button('GitHub')
+if linkedin:
+    webbrowser.open("https://www.linkedin.com/in/naveen-kumar-s-921990210/")
+if github:
+    webbrowser.open("https://github.com/0EnIgma1")
     
     #res = pg.confirm('Do you want to download the sketch ?')
     #if res == "OK":
