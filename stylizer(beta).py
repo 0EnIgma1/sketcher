@@ -36,6 +36,7 @@ def stylizer(image1, image2):
     out_img = output[0]
     if len(out_img.shape) > 3:
 	    out_img = tf.squeeze(out_img, axis = 0)
+    out_img = np.asarray(out_img).astype('float32')
     return out_img
 
 def style_upload(image1):
