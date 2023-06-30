@@ -48,6 +48,7 @@ def style_upload(image1):
     if styleFile is not None:
         im2 = Image.open(styleFile)
         image2 = np.array(im2)
+        image2 = np.asarray(image2).astype('float32')
         stylizer(image1,image2)
 
 uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
@@ -55,5 +56,6 @@ if uploadFile is not None:
     im = Image.open(uploadFile)
     image1 = np.array(im)
     st.image(image1)
-
+image1 = np.asarray(image1).astype('float32')
+print(image1.shape)
 out_img = style_upload(image1)
