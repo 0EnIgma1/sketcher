@@ -4,7 +4,10 @@ import cv2
 from PIL import Image
 import numpy as np
 from io import StringIO
-import webbrowser
+#import numpy as np
+#import tensorflow as tf
+#import tensorflow_hub as hub
+#from collections.abc import Iterable
 
 icon = Image.open("UV_icon1.png")
 st.set_page_config(
@@ -89,74 +92,66 @@ def cartoon(image):
     result = result.reshape(image.shape)
     return result
 
+
 # Uploading the File to the Page
-def upload():
-    uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
-    if uploadFile is not None:
-        im = Image.open(uploadFile)
-        image1 = np.array(im)
-        st.subheader("Original Image")
-        st.image(image1)
-        st.subheader("Converted Image")
-    return image1
-
+#image2 = None
 option = st.selectbox('Sketch the image into :',('Pencil sketch','Gray','Watercolor','Negative','Canny Edge','Cartoon', 'Custom Stylizer'))
+uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
 # Checking the Format of the page
-
-if option == 'Gray':
-    image1 = upload()
-    out_img = gray(image1)
-elif option == 'Pencil sketch':
-    image1 = upload()
-    out_img = sketch(image1)
-elif option == 'Watercolor':
-    image1 = upload()
-    out_img = watercol(image1)
-elif option == 'Negative':
-    image1 = upload()
-    out_img = negative(image1) 
-elif option == 'Cartoon':
-    image1 = upload()
-    out_img = cartoon(image1)   
-elif option == 'Canny Edge':
-    image1 = upload()
-    values = st.slider("Select the Range of Thresholds",0,255,(25,75))
-    st.text(values)
-    threshold1, threshold2 = values
-    out_img = canny_edge(image1, threshold1, threshold2)
-elif option == 'Custom Stylizer':
-        ...
-
-st.image(out_img)
+if uploadFile is not None:
+    im = Image.open(uploadFile)
+    image1 = np.array(im)
+    st.subheader("Original Image")
+    st.image(image1)
+    st.subheader("Converted Image")
+    if option == 'Gray':
+        out_img = gray(image1)
+    elif option == 'Pencil sketch':
+        out_img = sketch(image1)
+    elif option == 'Watercolor':
+        out_img = watercol(image1)
+    elif option == 'Negative':
+        out_img = negative(image1) 
+    elif option == 'Cartoon':
+        out_img = cartoon(image1)   
+    elif option == 'Canny Edge':
+        values = st.slider("Select the Range of Thresholds",0,255,(25,75))
+        st.text(values)
+        threshold1, threshold2 = values
+        out_img = canny_edge(image1, threshold1, threshold2)
+    #elif option == 'Custom Stylizer':
+        #out_img = style_upload(image1)
+    if out_img is not None:
+        st.image(out_img)
 
     #st.subheader("Comparison")
     #fun(image1,out_img)
 
-st.text("")
+        st.text("")
 
-st.success('Successfully converted the Image', icon = "✅")
+        st.success('Successfully converted the Image', icon = "✅")
 
-st.text("")
-st.text("")
-feedback = st.slider('Rate this Project', 0,5,1)
-st.write(f"I'm giving {feedback} star for this project !")
+        st.text("")
+        st.text("")
+        feedback = st.slider('Rate this Project', 0,5,1)
+        st.write(f"I'm giving {feedback} star for this project !")
 
-st.text("Thank you for visiting this project..Hope it will be useful for you")
+        st.text("Thank you for visiting this project..Hope it will be useful for you")
 
-for j in range(0,4):
-    st.text("")
-st.subheader("Wanna join / become MEMBER of our society UV...")
-st.write("Follow the LINK [UV](https://theuvofearth.wixsite.com/stage1)")
+        for j in range(0,4):
+            st.text("")
+        st.subheader("Wanna join / become MEMBER of our society UV...")
+        st.write("Follow the LINK [UV](https://theuvofearth.wixsite.com/stage1)")
 
-for i in range(0,5):
-    st.text("")
+        for i in range(0,5):
+            st.text("")
 
-linkedin = st.button('LinkedIn')
-github = st.button('GitHub')
-if linkedin:
-    webbrowser.open("https://www.linkedin.com/in/naveen-kumar-s-921990210/")
-if github:
-    webbrowser.open("https://github.com/0EnIgma1")
+        linkedin = st.button('LinkedIn')
+        github = st.button('GitHub')
+        if linkedin:
+            webbrowser.open("https://www.linkedin.com/in/naveen-kumar-s-921990210/")
+        if github:
+            webbrowser.open("https://github.com/0EnIgma1")
     
     #res = pg.confirm('Do you want to download the sketch ?')
     #if res == "OK":
