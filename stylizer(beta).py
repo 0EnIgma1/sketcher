@@ -1,7 +1,23 @@
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
-from collections.abc import Iterable
+import streamlit as st
+from PIL import Image
+try:
+    from collections.abc import Iterable
+except ImportError:
+    from collections import Iterable
+
+icon = Image.open("UV_icon1.png")
+st.set_page_config(
+    page_title = "Sketcher",
+    page_icon = icon,
+    layout = "centered"
+)
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
+st.title("SKETCHER")
+
 def stylizer(image1, image2):
     def convert(image):
         img = tf,io.read_file(image)
@@ -33,3 +49,11 @@ def style_upload(image1):
         im2 = Image.open(styleFile)
         image2 = np.array(im2)
         stylizer(image1,image2)
+
+uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
+if uploadFile is not None:
+    im = Image.open(uploadFile)
+    image1 = np.array(im)
+    st.image(image1)
+
+out_img = style_upload(image1)

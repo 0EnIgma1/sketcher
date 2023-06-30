@@ -2,3 +2,5 @@ matplotlib
 streamlit
 numpy
 opencv-python-headless
+tensorflow
+tensorflow_hub
