@@ -59,3 +59,4 @@ if uploadFile is not None:
 image1 = np.asarray(image1).astype('float32')
 print(image1.shape)
 out_img = style_upload(image1)
+st.image(out_img)
