@@ -18,8 +18,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.title("SKETCHER")
 
-def stylizer(image1, image2):
-    def convert(image):
+def convert(image):
         img = tf.convert_to_tensor(image, dtype=tf.float32)
         #img = tf.image.decode_image(img, channels = 3)
         #img = tf.image.convert_image_dtype(img, tf.float32)
@@ -27,6 +26,7 @@ def stylizer(image1, image2):
         img = img[tf.newaxis, :]
         return img
 
+def stylizer(image1, image2):
     original_image = convert(image1)
     style_image = convert(image2)
 
@@ -49,7 +49,7 @@ def style_upload(image1):
         im2 = Image.open(styleFile)
         image2 = np.array(im2)
         image2 = np.asarray(image2).astype('float32')
-        stylizer(image1,image2)
+        return image2
 
 uploadFile = st.file_uploader(label="Upload your image below", type=['jpg', 'png'])
 if uploadFile is not None:
@@ -58,5 +58,6 @@ if uploadFile is not None:
     st.image(image1)
 image1 = np.asarray(image1).astype('float32')
 print(image1.shape)
-out_img = style_upload(image1)
+style_img = style_upload(image1)
+out_img = stylizer(image1, style_img)
 st.image(out_img)
