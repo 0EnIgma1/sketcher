@@ -20,7 +20,7 @@ st.title("SKETCHER")
 
 def stylizer(image1, image2):
     def convert(image):
-        img = tf,io.read_file(image)
+        img = tf.io.read_file(image)
         img = tf.image.decode_image(img, channels = 3)
         img = tf.image.convert_image_dtype(img, tf.float32)
         img = tf.image.resize(img, (512,512), preserve_aspect_ratio = True)
